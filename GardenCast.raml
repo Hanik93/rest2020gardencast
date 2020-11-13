@@ -57,19 +57,12 @@ mediaType:
           95025,ger
         required: false
 
-  put:
-    queryParameters:
-      apiKey:
-        displayName: API Key
-        type: string
-        description: Token for authentification
-        required: true
-
     responses:
       200:
         description: SUCCESS
         body:
           application/json:
+
             example:
               {
                 "current" : {
@@ -195,13 +188,6 @@ mediaType:
         example:
           April
         required: false
-  put:
-    queryParameters:
-      apiKey:
-        displayName: API Key
-        type: string
-        description: Token for authentification
-        required: true
 
     responses:
       200:
@@ -273,13 +259,6 @@ mediaType:
         description: The name of the plant according to which the months will be displayed
         example:
           Aloe Vera
-        required: true
-  put:
-    queryParameters:
-      apiKey:
-        displayName: API Key
-        type: string
-        description: Token for authentification
         required: true
 
     responses:
