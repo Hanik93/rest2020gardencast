@@ -332,8 +332,7 @@ mediaType:
       get:
       post:
       put:
-        description: for sending a base64 encoded image(s) to the server in order to be identified
-        
+        description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
         body:
           application/json:
             type:
@@ -344,7 +343,7 @@ mediaType:
                 images: [iVBORw0KGg...AAABJRU5ErkJggg==, iVBORw0KGg...AAABJRU5ErkJggg==]
                 lat: 50.802122
                 lng: 20.778202
-                plant_details: []
+                plant_details: [various_parameters]
               }
             }
         responses:
@@ -354,5 +353,18 @@ mediaType:
               application/json:
                 example:
                   {
-                    "plant_list" : [plant]
+                    "plant_results" : [
+                        {
+                          "name": "Lateinischer Name 1"
+                          "confidence": "0.82"
+                          "synonyms": [ "common name 1", "common name 2"]
+                          "warnings": [ "poisonous if ingestesd", "poisonous on touch" ]
+                        },
+                        {
+                          "name": "Lateinischer Name 2"
+                          "confidence": "0.82"
+                          "synonyms": [ "common name 1", "common name 2"]
+                          "warnings": [ ]
+                        }
+                      ]
                   }
