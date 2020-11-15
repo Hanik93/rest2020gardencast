@@ -1,0 +1,17 @@
+{
+    "ideasForPlanting": [
+        {
+            "id": 103926,
+            "common_name": "Fynbos aloe",
+            "slug": "aloe-succotrina",
+            "scientific_name": "Aloe vera",
+            "family": null,
+            "image_url": "https://bs.floristic.org/image/o/e96639b99cee09e6b7b9faa4901ee6cd54e8519b",
+            "notesForPlanting": "requires a lot of water",
+            "fertility_requirement": null,
+            "minimum temperature": 21,
+            "maximum_temperature": 30,
+            "atmospheric_humidity": 2
+        }
+    ]
+}

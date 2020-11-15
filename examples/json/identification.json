@@ -1,0 +1,25 @@
+{
+    "plant_results": [
+        {
+            "name": "Lateinischer Name 1",
+            "confidence": "0.82",
+            "synonyms": [
+                "common name 1",
+                "common name 2"
+            ],
+            "warnings": [
+                "poisonous if ingestesd",
+                "poisonous on touch"
+            ]
+        },
+        {
+            "name": "Lateinischer Name 2",
+            "confidence": "0.82",
+            "synonyms": [
+                "common name 1",
+                "common name 2"
+            ],
+            "warnings": []
+        }
+    ]
+}

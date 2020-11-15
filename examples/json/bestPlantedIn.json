@@ -1,0 +1,13 @@
+{
+  "plant_name": "Aloe Vera",
+  "listOfMonths": ["april", "may", "june", "july"],
+  "notesForCaretaking": {
+    "descriptionOfGrowth": "A description on how the plant usually grows",
+    "sowing": "A description on how to sow the plant",
+    "ph_maximum": "The maximum acceptable soil pH (of the top 30 centimeters of soil) for the plant",
+    "ph_minimum": "The minimum acceptable soil pH (of the top 30 centimeters of soil) for the plant",
+    "light": "Required amount of light, on a scale from 0 (no light, smaller 10 lux) to 10 (very intensive insolation, higher 100 000 lux)",
+    "bloom_months": "The months the species usually blooms",
+    "row_spacing": "The minimum spacing between each rows of plants, in centimeters"
+  }
+}

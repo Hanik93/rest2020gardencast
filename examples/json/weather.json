@@ -1,0 +1,72 @@
+{
+    "current": {
+        "time": 1595243443,
+        "sunrise": 1595243663,
+        "sunset": 1595296278,
+        "temp": 293.28,
+        "feels_like": 293.82,
+        "humidity": 100,
+        "uvi": 10.64,
+        "clouds": 90,
+        "weather": [
+            {
+                "id": 501,
+                "main": "Rain",
+                "description": "moderate rain"
+            },
+            {
+                "id": 201,
+                "main": "Thunderstorm",
+                "description": "thunderstorm with rain"
+            }
+        ],
+        "hourly": [
+            {
+                "time": 1595242800,
+                "temp": 293.28,
+                "feels_like": 293.82,
+                "humidity": 100,
+                "clouds": 90,
+                "weather": [
+                    {
+                        "id": 501,
+                        "main": "Rain",
+                        "description": "moderate rain"
+                    }
+                ]
+            }
+        ],
+        "daily": [
+            {
+                "time": 1595268000,
+                "sunrise": 1595243663,
+                "sunset": 1595296278,
+                "humidity": 100,
+                "cloud": 97,
+                "uvi": 10,
+                "temp": {
+                    "day": 30,
+                    "min": 30,
+                    "max": 30,
+                    "night": 30,
+                    "eve": 30,
+                    "morn": 30
+                },
+                "feels_like": {
+                    "day": 30,
+                    "night": 30,
+                    "eve": 30,
+                    "morn": 30
+                }
+            }
+        ],
+        "alerts": [
+            {
+                "event": "Heat Advisory",
+                "start_Time": 1597341600,
+                "end_Time": 1597366800,
+                "description": "HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO\n8 PM CDT THIS EVENING...\n* WHAT...Heat index values of 105 to 109 degrees expected.\n*                                             WHERE...Creek, Okfuskee, Okmulgee, McIntosh, Pittsburg,\nLatimer, Pushmataha, and Choctaw Counties.\n* WHEN...From 1 PM to 8 PM CDT Thursday.\n*                                                 IMPACTS...The combination of hot temperatures and high\nhumidity will combine to create a dangerous situation in which\nheat illnesses are possible."
+            }
+        ]
+    }
+}
