@@ -1,0 +1,81 @@
+#%RAML 1.0
+title: GardenCast
+description: GardenCast REST API specification.
+baseUri: http://ab-rest-8.netlab.hof-university.de/{version}
+version: v1
+protocols: HTTP
+mediaType: [ application/json, application/xml ]
+documentation: 
+  - title: Home
+    content: |
+      Welcome to the _GardenCast API_ Documentation. The _GardenCast API_
+      allows you to connect your application to receive weather forecast data
+      and information about plants, weather and a custom search.
+
+# Objects
+types:
+  User: !include types/User.raml
+  Token: !include types/Token.raml
+
+/weather:
+
+/notesForPlants:
+
+/user:
+  get:
+  /{userId}:
+    get:
+    put:
+    delete:
+    /favorites:
+      get:
+      post:
+      put:
+      delete:
+
+/auth:
+  /login:
+    post:
+      body: 
+        application/json:
+          type: object
+          example: !include examples/login.raml
+      responses:
+        200:
+          body:
+            application/json:
+              type: Token
+              example: !include examples/token.raml
+        400:
+          body:
+            application/json:
+              type: object
+              example:
+                message: Invalid credentials
+        404:
+          description: User not found
+          body:
+            application/json:
+              type: object
+              example:
+                message: User not found
+  /register:
+    post:
+      body:
+        application/json:
+          type: User
+          example: !include examples/register.raml
+      responses: 
+        201:
+          description: Created a user
+          body:
+            application/json:
+              type: User
+              example: !include examples/user.raml
+        400:
+          description: E-Mail already exists
+          body:
+            application/json:
+              type: object
+              example:
+                message: E-Mail already exists
