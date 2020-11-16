@@ -1,0 +1,16 @@
+baseUri: http://ab-rest-8.netlab.hof-university.de/{version}
+
+/weather
+
+/plants/month
+/plants/environment
+/plants/identification
+
+
+/users/{userId}
+/users/{userId}/favorites
+
+/auth/login
+/auth/register
+/auth/logout
+
