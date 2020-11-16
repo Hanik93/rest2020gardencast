@@ -103,34 +103,34 @@ types:
   
   /month:
     description: this endpoint can be used to retrieve a list of months in which the specified plant is best to be planted along with other useful information for caretaking
-      get:
-        queryParameters:
-          plantName:
-            displayName: Plant Name
-            type: string
-            description: The name of the plant according to which the months will be displayed
-            example: Aloe Vera
-            required: true
-        responses:
-          200:
-            description: SUCCESS
-            body:
-              application/json:
-                example: !include examples/json/month.json
-          400:
-            description: BAD REQUEST, CHECK PARAMETERS
-            body:
-              application/json:
-                type: object
-                example:
-                  message: Bad request
-          401:
-            description: Unauthorized
-            body:
-              application/json:
-                type: object
-                example:
-                  message: Unauthorized
+    get:
+      queryParameters:
+        plantName:
+          displayName: Plant Name
+          type: string
+          description: The name of the plant according to which the months will be displayed
+          example: Aloe Vera
+          required: true
+      responses:
+        200:
+          description: SUCCESS
+          body:
+            application/json:
+              example: !include examples/json/month.json
+        400:
+          description: BAD REQUEST, CHECK PARAMETERS
+          body:
+            application/json:
+              type: object
+              example:
+                message: Bad request
+        401:
+          description: Unauthorized
+          body:
+            application/json:
+              type: object
+              example:
+                message: Unauthorized
   /environment:
     description: |
       This endpoint can be used in two ways.
