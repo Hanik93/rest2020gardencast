@@ -12,6 +12,9 @@ documentation:
       allows you to connect your application to receive weather forecast data
       and information about plants, weather and a custom search.
 
+securitySchemes: 
+  oauth_2_0: !include traits/oauth_2_0.raml
+
 # Objects
 types:
   User: !include types/User.raml
@@ -189,17 +192,45 @@ types:
             application/json:
               example: !include examples/json/identification.json
 
-/user:
-  get:
+/users:
   /{userId}:
     get:
+      securedBy: [oauth_2_0]
+      description: Get the details of a user.
+      responses: 
+        200:
+          body:
+            application/json:
+              type: User
+              example: !include examples/user.raml
     put:
+      securedBy: [oauth_2_0]
+      description: Update multiple user information.
+      body:
+      responses: 
+        200:
+          description: Successfully updated.
     delete:
+      securedBy: [oauth_2_0]
+      responses: 
+        204:
+          description: User deleted.
+        401:
+          description: Not authorized.
+        403:
+          description: Forbidden.
+        404:
+          description: User not found.
+        410:
+          description: User is already deleted.
     /favorites:
       get:
       post:
+        securedBy: [oauth_2_0]
       put:
+        securedBy: [oauth_2_0]
       delete:
+        securedBy: [oauth_2_0]
 
 /auth:
   /login:
@@ -233,9 +264,12 @@ types:
         application/json:
           type: User
           example: !include examples/register.raml
-      responses: 
+      responses:
         201:
           description: Created a user
+          headers:
+            Location:
+              description: The location of the created user.
           body:
             application/json:
               type: User
@@ -247,3 +281,6 @@ types:
               type: object
               example:
                 message: E-Mail already exists
+  /logout:
+    post:
+      securedBy: [oauth_2_0]

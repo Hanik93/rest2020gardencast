@@ -12,5 +12,9 @@ Options:
 
 ...
 ```
+Linux:
 raml2html [OPTIONS] main.raml > api.html
+
+Windows:
+raml2html.cmd -v -o api.html main.raml
 ```
