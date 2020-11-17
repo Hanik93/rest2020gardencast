@@ -227,14 +227,67 @@ types:
           description: User not found.
         410:
           description: User is already deleted.
+
+
     /favorites:
       get:
+        description: get the favorit list of a user
+        queryParameters:
+         id:
+            type: number
+            example: 103926
+            required: false
+         common name:
+          type: string
+          example: Aloe vera
+          required: false   
+        body:
+         application/json:
+          example: include types/plant.raml
+        responses:
+         200:
+          description: ok
+          body:
+           application/json:
+            type: array
+            example: [include type/plant.raml]
+            
       post:
         securedBy: [oauth_2_0]
+        description: add new item
+        body:
+         application/json:
+          type: object
+          example: !include examples/plant.raml
+        responses:
+           201: 
+            description: item created
+            body:
+              application/json:
+               type: object
+               example: !include examples/plant.raml     
+
+           409:
+            description: item already exists
+
       put:
-        securedBy: [oauth_2_0]
+
       delete:
         securedBy: [oauth_2_0]
+        description: delete item
+        queryParameters:
+         id:
+          type: number
+          example: 103926
+          required: true   
+        responses:
+          200:
+           description: item deleted
+          404: 
+           description: item not found
+          410: 
+           description: item is already deleted
+
 
 /auth:
   /login:
