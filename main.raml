@@ -233,28 +233,24 @@ types:
       get:
         description: get the favorit list of a user
         queryParameters:
-         id:
-            type: number
-            example: 103926
-            required: false
-         common name:
+         plantName:
           type: string
           example: Aloe vera
           required: false   
         body:
          application/json:
-          example: include types/plant.raml
+          example: include examples/plant.raml
         responses:
          200:
           description: ok
           body:
            application/json:
             type: array
-            example: [include type/plant.raml]
+            example: [include examples/plant.raml]
             
       post:
         securedBy: [oauth_2_0]
-        description: add new item
+        description: add new item to the list
         body:
          application/json:
           type: object
@@ -266,19 +262,16 @@ types:
               application/json:
                type: object
                example: !include examples/plant.raml     
-
            409:
             description: item already exists
-
-      put:
 
       delete:
         securedBy: [oauth_2_0]
         description: delete item
         queryParameters:
-         id:
-          type: number
-          example: 103926
+         name:
+          type: string
+          example: aloe vera
           required: true   
         responses:
           200:
