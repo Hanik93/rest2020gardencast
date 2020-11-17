@@ -19,6 +19,7 @@ securitySchemes:
 types:
   User: !include types/User.raml
   Token: !include types/Token.raml
+  plant: !include types/plant.raml
 
 /weather:
   description: |
@@ -231,12 +232,7 @@ types:
 
     /favorites:
       get:
-        description: get the favorit list of a user
-        queryParameters:
-         plantName:
-          type: string
-          example: Aloe vera
-          required: false   
+        description: get list of plans
         body:
          application/json:
           example: include examples/plant.raml
@@ -250,28 +246,47 @@ types:
             
       post:
         securedBy: [oauth_2_0]
-        description: add new item to the list
+        description: add a new item to the list
         body:
          application/json:
-          type: object
+          type: plant
           example: !include examples/plant.raml
         responses:
            201: 
             description: item created
             body:
               application/json:
-               type: object
+               type: plant
                example: !include examples/plant.raml     
            409:
             description: item already exists
 
-      delete:
+    /{plantid}: 
+     get:
+        description: get item of list
+        queryParameters:
+         id:
+            type: number
+            description: id of the plant 
+            example: 103926
+            required: true
+        responses:
+         200:
+          description: ok
+          body:
+           application/json:
+            type: plant
+            example: [include examples/plant.raml]
+         404:
+          description: plant not found
+
+     delete:
         securedBy: [oauth_2_0]
         description: delete item
         queryParameters:
-         name:
-          type: string
-          example: aloe vera
+         id:
+          type: number
+          example: 103926
           required: true   
         responses:
           200:
@@ -280,6 +295,7 @@ types:
            description: item not found
           410: 
            description: item is already deleted
+      
 
 
 /auth:
