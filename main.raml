@@ -234,69 +234,67 @@ types:
       get:
         description: get list of favorite plants
         body:
-         application/json:
-          example: include examples/plant.raml
+          application/json:
+            example: include examples/plant.raml
         responses:
          200:
           description: ok
           body:
-           application/json:
-            type: array
-            example: [include examples/plant.raml]
+            application/json:
+              type: array
+              example: [include examples/plant.raml]
             
       post:
         securedBy: [oauth_2_0]
         description: add a new item to the list
         body:
-         application/json:
-          type: plant
-          example: !include examples/plant.raml
+          application/json:
+            type: plant
+            example: !include examples/plant.raml
         responses:
            201: 
             description: item created
             body:
               application/json:
-               type: plant
-               example: !include examples/plant.raml     
+                type: plant
+                example: !include examples/plant.raml     
            409:
             description: item already exists
 
-    /{plantid}: 
-     get:
-        description: get a singel item of favorite list
-        queryParameters:
-         id:
-            type: number
-            description: id of the plant 
-            example: 103926
-            required: true
-        responses:
-         200:
-          description: ok
-          body:
-           application/json:
-            type: plant
-            example: [include examples/plant.raml]
-         404:
-          description: plant not found
+      /{plantid}: 
+        get:
+          description: get a singel item of favorite list
+          queryParameters:
+            id:
+              type: number
+              description: id of the plant 
+              example: 103926
+              required: true
+          responses:
+            200:
+              description: ok
+              body:
+                application/json:
+                  type: plant
+                  example: [include examples/plant.raml]
+            404:
+              description: plant not found
 
-     delete:
-        securedBy: [oauth_2_0]
-        description: delete item
-        queryParameters:
-         id:
-          type: number
-          example: 103926
-          required: true   
-        responses:
-          200:
-           description: item deleted
-          404: 
-           description: item not found
-          410: 
-           description: item is already deleted
-      
-
+        delete:
+          securedBy: [oauth_2_0]
+          description: delete item
+          queryParameters:
+            id:
+              type: number
+              example: 103926
+              required: true   
+          responses:
+            200:
+              description: item deleted
+            404: 
+              description: item not found
+            410: 
+              description: item is already deleted
 
 /auth:
   /login:
