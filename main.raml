@@ -86,24 +86,22 @@ types:
   description: |
     Search for plant data by their name, identify plants using image recognition,
     research their growth months and retrieve information about their preferred environment
-  /search:
-    /{search_string}:
-      get:
-        description: List of plants, whose common or latin name matches the input string
-        responses:
-          200:
-            description: SUCCESS
-            body:
-              application/json:
-                example: !include examples/json/plantSearch.json
-          404:
-            description: NOTFOUND
-            body:
-              application/json:
-                type: object
-                example:
-                  message: Not found
-      post:
+  /{search_string}:
+    get:
+      description: List of plants, whose common or latin name matches the input string
+      responses:
+        200:
+          description: SUCCESS
+          body:
+            application/json:
+              example: !include examples/json/plantSearch.json
+        404:
+          description: NOTFOUND
+          body:
+            application/json:
+              type: object
+              example:
+                message: Not found
   
   /month:
     description: this endpoint can be used to retrieve a list of months in which the specified plant is best to be planted along with other useful information for caretaking
@@ -179,8 +177,6 @@ types:
                 message: Unauthorized
 
   /identification:
-    get:
-    post:
     put:
       description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
       body:
@@ -198,7 +194,7 @@ types:
 
 /users:
   description: |
-    This endpoint serves the purpose of registering and managing users
+    This endpoint serves the purpose of registering and managing users favorite plants
   /{userId}:
     get:
       securedBy: [oauth_2_0]
@@ -301,6 +297,8 @@ types:
               description: item is already deleted
 
 /auth:
+  description: |
+    Manages user credentials and authentication
   /login:
     post:
       body: 

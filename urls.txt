@@ -1,16 +1,17 @@
 baseUri: http://ab-rest-8.netlab.hof-university.de/{version}
 
-/weather
+/weather -> Fetch available weather data according to optional parameters
 
-/plants/month
-/plants/environment
-/plants/identification
+/plants/{search_name} -> Liste aller pflanzen gefiltert nach Name/lat. Name
+/plants/month -> List of plants, which can be planted in specified month
+/plants/environment -> Umgebungsdaten für spezifische Pflanze
+/plants/identification -> Liste and potenziellen Pflanzen
 
 
-/users/{userId}
-/users/{userId}/favorites
+/users/{userId} -> Userdaten
+/users/{userId}/favorites -> Liste der Favoritenpflanzen
+/users/{userId}/favorites/{plantid} -> spezifische Pflanze in Favoritenliste
 
 /auth/login
 /auth/register
 /auth/logout
-
