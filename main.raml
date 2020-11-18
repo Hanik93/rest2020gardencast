@@ -133,66 +133,62 @@ types:
               example:
                 message: Unauthorized
   /environment:
-    description: |
-      This endpoint can be used in two ways.
-      Call it with weather information to recieve plants that are affected by this weather.
-      Or call by plants and get back weather information corresponding to the plant that was called.
-      Its also possible to input a month and recieve a list of plants to best plant during this month.
-      get:
-        queryParameters:
-          minTemperature:
-            displayName: Minimum Temperature
-            type: number
-            description: The minimum tolerable temperature for the species. In celsius or fahrenheit degrees
-            example: 10
-            required: false
-          maxTemperature:
-            displayName: Maximum Temperature
-            type: number
-            description: The maximum tolerable temperature for the species. In celsius or fahrenheit degrees
-            example: 30
-            required: false
-          months:
-            displayName: Months
-            type: string
-            description: The most active growth months of the species (usually all year round for perennial plants)
-            example: April
-            required: false
-        responses:
-          200:
-            description: SUCCESS
-            body:
-              application/json:
-                example: !include examples/json/environment.json
-          400:
-            description: BAD REQUEST, CHECK PARAMETERS
-            body:
-              application/json:
-                type: object
-                example:
-                  message: Bad request
-          401:
-            description: Unauthorized
-            body:
-              application/json:
-                type: object
-                example:
-                  message: Unauthorized
+    description:
+    get:
+      queryParameters:
+        minTemperature:
+          displayName: Minimum Temperature
+          type: number
+          description: The minimum tolerable temperature for the species. In celsius or fahrenheit degrees
+          example: 10
+          required: false
+        maxTemperature:
+          displayName: Maximum Temperature
+          type: number
+          description: The maximum tolerable temperature for the species. In celsius or fahrenheit degrees
+          example: 30
+          required: false
+        months:
+          displayName: Months
+          type: string
+          description: The most active growth months of the species (usually all year round for perennial plants)
+          example: April
+          required: false
+      responses:
+        200:
+          description: SUCCESS
+          body:
+            application/json:
+              example: !include examples/json/environment.json
+        400:
+          description: BAD REQUEST, CHECK PARAMETERS
+          body:
+            application/json:
+              type: object
+              example:
+                message: Bad request
+        401:
+          description: Unauthorized
+          body:
+            application/json:
+              type: object
+              example:
+                message: Unauthorized
 
-    /identification:
-      get:
-      post:
-      put:
-        description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
-        body:
-          application/json:
-            example: !include examples/json/identificationRequest.json
-        responses:
-          200:
-            description: SUCCESS
-            body:
-                application/json:
-                  example: !include examples/json/identification.json
+  /identification:
+    get:
+    post:
+    put:
+      description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
+      body:
+        application/json:
+          example: !include examples/json/identificationRequest.json
+      responses:
+        200:
+          description: SUCCESS
+          body:
+              application/json:
+                example: !include examples/json/identification.json
 
       
 
