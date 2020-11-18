@@ -133,7 +133,7 @@ types:
               example:
                 message: Unauthorized
   /environment:
-    description: Specify Min and Max Temperature, month or soil type and recieve plants according to that information
+    description:
     get:
       queryParameters:
         minTemperature:
@@ -153,12 +153,6 @@ types:
           type: string
           description: The most active growth months of the species (usually all year round for perennial plants)
           example: April
-          required: false
-        soil:
-          displayName: Soil Type
-          type: string
-          description: specify a soil type from rocky, clay, grass etc.
-          example: rocky
           required: false
       responses:
         200:
@@ -182,19 +176,19 @@ types:
                 message: Unauthorized
 
   /identification:
-      get:
-      post:
-      put:
-        description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
-        body:
-          application/json:
-            example: !include examples/json/identificationRequest.json
-        responses:
-          200:
-            description: SUCCESS
-            body:
-                application/json:
-                  example: !include examples/json/identification.json
+    get:
+    post:
+    put:
+      description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
+      body:
+        application/json:
+          example: !include examples/json/identificationRequest.json
+      responses:
+        200:
+          description: SUCCESS
+          body:
+              application/json:
+                example: !include examples/json/identification.json
 
       
 
