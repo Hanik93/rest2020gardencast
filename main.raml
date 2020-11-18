@@ -83,6 +83,9 @@ types:
 
 
 /plants:
+  description: |
+    Search for plant data by their name, identify plants using image recognition,
+    research their growth months and retrieve information about their preferred environment
   /search:
     /{search_string}:
       get:
@@ -194,6 +197,8 @@ types:
 
 
 /users:
+  description: |
+    This endpoint serves the purpose of registering and managing users
   /{userId}:
     get:
       securedBy: [oauth_2_0]
