@@ -27,6 +27,7 @@ types:
     **NOTE** All parameters are optional, but you must select at least one parameter.
     Calling the API by city ID (using the id parameter) will provide the most precise location results.
   get:
+    securedBy: [oauth_2_0]
     queryParameters:
       lat:
         displayName: Latitude
@@ -88,6 +89,7 @@ types:
     research their growth months and retrieve information about their preferred environment
   /{search_string}:
     get:
+      securedBy: [oauth_2_0]
       description: List of plants, whose common or latin name matches the input string
       responses:
         200:
@@ -106,6 +108,7 @@ types:
   /month:
     description: this endpoint can be used to retrieve a list of months in which the specified plant is best to be planted along with other useful information for caretaking
     get:
+      securedBy: [oauth_2_0]
       queryParameters:
         plantName:
           displayName: Plant Name
@@ -136,6 +139,7 @@ types:
   /environment:
     description:
     get:
+      securedBy: [oauth_2_0]
       queryParameters:
         minTemperature:
           displayName: Minimum Temperature
