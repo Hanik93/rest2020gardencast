@@ -19,7 +19,7 @@ securitySchemes:
 types:
   User: !include types/User.raml
   Token: !include types/Token.raml
-  plant: !include types/plant.raml
+  plant: !include types/FavoritePlant.raml
 
 /weather:
   description: |
@@ -239,10 +239,11 @@ types:
 
     /favorites:
       get:
+        securedBy: [oauth_2_0]
         description: get list of favorite plants
         body:
           application/json:
-            example: !include examples/plant.raml
+            example: !include examples/favoritePlant.raml
         responses:
           200:
             description: ok
@@ -250,7 +251,7 @@ types:
               application/json:
                 example:
                   type: array
-                  items: !include examples/plant.raml
+                  items: !include examples/favoritePlant.raml
           404:
             description: list empty
             
@@ -260,19 +261,20 @@ types:
         body:
           application/json:
             type: plant
-            example: !include examples/plant.raml
+            example: !include examples/favoritePlant.raml
         responses:
           201: 
             description: item created
             body:
               application/json:
                 type: plant
-                example: !include examples/plant.raml     
+                example: !include examples/favoritePlant.raml     
           409:
             description: item already exists
 
       /{plantid}: 
         get:
+          securedBy: [oauth_2_0]
           description: get a single item of favorite list
           queryParameters:
             id:
