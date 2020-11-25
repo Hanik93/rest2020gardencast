@@ -1,0 +1,22 @@
+{
+    "name": "Lateinischer Name",
+    "confidence": "0.82",
+    "taxonomy": {
+        "kingdom": "",
+        "subkingdom": "",
+        "division": "",
+        "division_order": "",
+        "family": "",
+        "genus": "",
+        "plant": ""
+    },
+    "image": "base64dadadadawdacn82undg9",
+    "synonyms": [
+        "common name 1",
+        "common name 2"
+    ],
+    "warnings": [
+        "poisonous if ingestesd",
+        "poisonous on touch"
+    ]
+}

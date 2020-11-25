@@ -186,18 +186,26 @@ types:
               example:
                 message: Unauthorized
 
-  /identification:
-    put:
-      description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
-      body:
-        application/json:
-          example: !include examples/json/identificationRequest.json
-      responses:
-        200:
-          description: SUCCESS
-          body:
-              application/json:
-                example: !include examples/json/identification.json
+/identification:
+  description: |
+    For submitting images and additional info to the servers identification controller.
+    The client can select the preferred result out of multiple possible results.
+  post:
+    description: for sending a base64 encoded image(s) to the server in order to be identified along with additional info
+    body:
+      application/json:
+        example: !include examples/identificationRequest.raml
+    responses:
+      200:
+        description: SUCCESS
+        body:
+          application/json:
+            example: !include examples/identificationResult.raml
+      300:
+        description: MULTIPLE CHOICES
+        body:
+          application/json:
+            example: !include examples/identificationChoices.raml
 
       
 

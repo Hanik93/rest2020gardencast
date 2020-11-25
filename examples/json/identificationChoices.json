@@ -3,18 +3,20 @@
         {
             "name": "Lateinischer Name 1",
             "confidence": "0.82",
+            "image": "base64dadadadawdacn82undg9",
             "synonyms": [
                 "common name 1",
                 "common name 2"
             ],
             "warnings": [
-                "poisonous if ingestesd",
+                "poisonous if ingested",
                 "poisonous on touch"
             ]
         },
         {
             "name": "Lateinischer Name 2",
             "confidence": "0.82",
+            "image": "base640fpfk)23!=^dkvsplf",
             "synonyms": [
                 "common name 1",
                 "common name 2"
