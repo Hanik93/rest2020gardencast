@@ -18,7 +18,6 @@ securitySchemes:
 # Objects
 types:
   User: !include types/User.raml
-  Token: !include types/Token.raml
   plant: !include types/FavoritePlant.raml
 
 /weather:
@@ -316,57 +315,20 @@ types:
             410: 
               description: item is already deleted
 
-/auth:
+/oauth2:
   description: |
     Manages user credentials and authentication
-  /login:
-    post:
-      body: 
-        application/json:
-          type: object
-          example: !include examples/login.raml
+  /authorize:
+    get:
       responses:
         200:
           body:
             application/json:
-              type: Token
-              example: !include examples/token.raml
-        400:
-          body:
-            application/json:
-              type: object
-              example:
-                message: Invalid credentials
-        404:
-          description: User not found
-          body:
-            application/json:
-              type: object
-              example:
-                message: User not found
-  /register:
-    post:
-      body:
-        application/json:
-          type: User
-          example: !include examples/register.raml
-      responses:
-        201:
-          description: Created a user
-          headers:
-            Location:
-              description: The location of the created user.
-          body:
-            application/json:
               type: User
               example: !include examples/user.raml
-        400:
-          description: E-Mail already exists
+        500:
           body:
             application/json:
               type: object
               example:
-                message: E-Mail already exists
-  /logout:
-    post:
-      securedBy: [oauth_2_0]
+                error: Google specific error message
