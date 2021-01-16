@@ -170,78 +170,97 @@ pre code {
 .required {
   color: #f00;
 }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>GardenCast API documentation <small>version v1</small></h1><p>http://ab-rest-8.netlab.hof-university.de/{version}</p><p>GardenCast REST API specification.</p><ul><li><strong>version</strong>: <em><span class="required">required</span>(v1)</em></li></ul><h3 id="home"><a href="#home">Home</a></h3><p>Welcome to the <em>GardenCast API</em> Documentation. The <em>GardenCast API</em> allows you to connect your application to receive weather forecast data and information about plants, weather and a custom search.</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="weather" class="panel-title">/weather</h3></div><div class="panel-body"><div class="top-resource-description"><p>Retrieves information about weather. <strong>NOTE</strong> All parameters are optional, but you must select at least one parameter. Calling the API by city ID (using the id parameter) will provide the most precise location results.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_weather"><span class="parent"></span>/weather</a> <span class="methods"><a href="#weather_get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_weather" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#weather_get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="weather_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/weather</h4></div><div class="modal-body"><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>GardenCast supports OAuth 2.0.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#weather_get_request" data-toggle="tab">Request</a></li><li><a href="#weather_get_response" data-toggle="tab">Response</a></li><li><a href="#weather_get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="weather_get_request"><h3>Query Parameters</h3><ul><li><strong>lat</strong>: <em>(number)</em><p>geographical latitude</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>50.3135</code></pre></div></li><li><strong>long</strong>: <em>(number)</em><p>geographical longitude</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>11.9128</code></pre></div></li><li><strong>cityID</strong>: <em>(number)</em><p>City ID. You can call by city ID. API responds with exact result. The List of city IDs can be downloaded <a href="http://bulk.openweathermap.org/sample/">here</a>. You can include multiple cities in parameter &mdash; just separate them by commas</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>2172797</code></pre></div></li><li><strong>cityName</strong>: <em>(string)</em><p>City Name. You can call by city name, or by city name and country code. The API responds with a list of results that match a searching word. For the query value, type the city name and optionally the country code divided by comma</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>Hof</code></pre></div></li><li><strong>zipCode</strong>: <em>(string)</em><p>Search by zip code. Please note if country is not specified then the search works for GER as a default."</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>95025,ger</code></pre></div></li></ul></div><div class="tab-pane" id="weather_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>SUCCESS</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>GardenCast API documentation <small>version v1</small></h1><p>http://ab-rest-8.netlab.hof-university.de/{version}</p><p>GardenCast REST API specification.</p><ul><li><strong>version</strong>: <em><span class="required">required</span>(v1)</em></li></ul><h3 id="home"><a href="#home">Home</a></h3><p>Welcome to the <em>GardenCast API</em> Documentation. The <em>GardenCast API</em> allows you to connect your application to receive weather forecast data and information about plants, weather and a custom search.</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="weather" class="panel-title">/weather</h3></div><div class="panel-body"><div class="top-resource-description"><p>Retrieves information about weather. <strong>NOTE</strong> All parameters are optional, but you must select at least one parameter.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_weather"><span class="parent"></span>/weather</a> <span class="methods"><a href="#weather_get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_weather" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#weather_get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="weather_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/weather</h4></div><div class="modal-body"><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>GardenCast supports OAuth 2.0.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#weather_get_request" data-toggle="tab">Request</a></li><li><a href="#weather_get_response" data-toggle="tab">Response</a></li><li><a href="#weather_get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="weather_get_request"><h3>Query Parameters</h3><ul><li><strong>lat</strong>: <em>(number)</em><p>geographical latitude</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>50.3135</code></pre></div></li><li><strong>long</strong>: <em>(number)</em><p>geographical longitude</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>11.9128</code></pre></div></li><li><strong>cityName</strong>: <em>(string)</em><p>City Name. You can call by city name, or by city name and country code. The API responds with a list of results that match a searching word. For the query value, type the city name and optionally the country code divided by comma</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>Hof</code></pre></div></li></ul></div><div class="tab-pane" id="weather_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>SUCCESS</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+    "lat": 50.3219,
+    "lon": 11.9179,
+    "timezone": "Europe/Berlin",
+    "timezone_offset": 6300,
     "current": {
-        "time": 1595243443,
+        "dt": 1595243443,
         "sunrise": 1595243663,
         "sunset": 1595296278,
         "temp": 293.28,
         "feels_like": 293.82,
+        "pressure": 1020,
         "humidity": 100,
+        "dew_point": 266.18,
         "uvi": 10.64,
         "clouds": 90,
-        "weather": [
-            {
-                "id": 501,
-                "main": "Rain",
-                "description": "moderate rain"
-            },
-            {
-                "id": 201,
-                "main": "Thunderstorm",
-                "description": "thunderstorm with rain"
-            }
-        ],
-        "hourly": [
-            {
-                "time": 1595242800,
-                "temp": 293.28,
-                "feels_like": 293.82,
-                "humidity": 100,
-                "clouds": 90,
-                "weather": [
-                    {
-                        "id": 501,
-                        "main": "Rain",
-                        "description": "moderate rain"
-                    }
-                ]
-            }
-        ],
-        "daily": [
-            {
-                "time": 1595268000,
-                "sunrise": 1595243663,
-                "sunset": 1595296278,
-                "humidity": 100,
-                "cloud": 97,
-                "uvi": 10,
-                "temp": {
-                    "day": 30,
-                    "min": 30,
-                    "max": 30,
-                    "night": 30,
-                    "eve": 30,
-                    "morn": 30
-                },
-                "feels_like": {
-                    "day": 30,
-                    "night": 30,
-                    "eve": 30,
-                    "morn": 30
-                }
-            }
-        ],
-        "alerts": [
-            {
-                "event": "Heat Advisory",
-                "start_Time": 1597341600,
-                "end_Time": 1597366800,
-                "description": "HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO\n8 PM CDT THIS EVENING...\n* WHAT...Heat index values of 105 to 109 degrees expected.\n*                                             WHERE...Creek, Okfuskee, Okmulgee, McIntosh, Pittsburg,\nLatimer, Pushmataha, and Choctaw Counties.\n* WHEN...From 1 PM to 8 PM CDT Thursday.\n*                                                 IMPACTS...The combination of hot temperatures and high\nhumidity will combine to create a dangerous situation in which\nheat illnesses are possible."
-            }
-        ]
-    }
-}</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>BAD REQUEST, CHECK PARAMETERS</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+        "visibility": 7000,
+        "wind_speed": 2.57,
+        "wind_deg": 260,
+        "weather": [{
+            "id": 501,
+            "main": "Rain",
+            "description": "moderate rain",
+            "icon": "13d"
+        }]
+    },
+    "minutely": [{
+        "dt": 1595242800,
+        "precipitation": 0
+    }],
+    "hourly": [{
+        "dt": 1595242800,
+        "temp": 293.28,
+        "feels_like": 293.82,
+        "pressure" : 1020,
+        "humidity": 100,
+        "dew_point" : 266.18,
+        "uvi" : 0.19,
+        "clouds": 90,
+        "visibility" : 1609,
+        "wind_sped" : 3.19,
+        "wind_deg" : 283,
+        "weather": [{
+            "id": 501,
+            "main": "Rain",
+            "description": "moderate rain",
+            "icon" : "04d"
+        }]
+    }],
+    "daily": [{
+        "dt": 1595268000,
+        "sunrise": 1595243663,
+        "sunset": 1595296278,
+        "temp": {
+            "day": 30,
+            "min": 30,
+            "max": 30,
+            "night": 30,
+            "eve": 30,
+            "morn": 30
+        },
+        "feels_like": {
+            "day": 30,
+            "night": 30,
+            "eve": 30,
+            "morn": 30
+        },
+        "pressure" : 1026,
+        "humidity": 100,
+        "dew_point" : 265.64,
+        "wind_speed" : 2.7,
+        "wind_deg" : 283,
+        "weather": [{
+            "id": 501,
+            "main": "Rain",
+            "description": "moderate rain",
+            "icon" : "04d"
+        }],
+        "cloud": 97,
+        "pop" : 0.39,
+        "uvi": 10
+    }],
+    "alerts": [{
+        "sender_name" : "DWD / Nationales Warnzentrum Offenbach",
+        "event": "FROST",
+        "start_Time": 1597341600,
+        "end_Time": 1597366800,
+        "description": "Es tritt mäßiger Frost bis -9 °C auf. In Tal- und Muldenlagen sinken die Temperaturen auf Werte bis -11 °C."
+    }]
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>BAD REQUEST, CHECK PARAMETERS</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Bad request"
 }</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "message": "Unauthorized"
