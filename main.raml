@@ -24,7 +24,6 @@ types:
   description: |
     Retrieves information about weather.
     **NOTE** All parameters are optional, but you must select at least one parameter.
-    Calling the API by city ID (using the id parameter) will provide the most precise location results.
   get:
     securedBy: [oauth_2_0]
     queryParameters:
@@ -40,12 +39,6 @@ types:
         description: geographical longitude
         example: 11.9128
         required: false
-      cityID:
-        displayName: City ID
-        type: number
-        description: City ID. You can call by city ID. API responds with exact result. The List of city IDs can be downloaded [here](http://bulk.openweathermap.org/sample/).                                         You can include multiple cities in parameter &mdash; just separate them by commas
-        example: 2172797
-        required: false
       cityName:
         displayName: City Name
         type: string
@@ -53,11 +46,7 @@ types:
         example: Hof
         required: false
       zipCode:
-        displayName: ZIP Code
-        type: string
-        description: Search by zip code. Please note if country is not specified then the search works for GER as a default."
-        example: 95025,ger
-        required: false
+
     responses: 
       200:
         description: SUCCESS
